@@ -6,8 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@cap-js/hana": "^2.1.1",
     "@cap-js/cds-test": "^0.3.0",
+    "@cap-js/hana": "^2.1.1",
     "@sap/cds": "^9.0.3",
     "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
     "express": "^4"
