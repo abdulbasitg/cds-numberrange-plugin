@@ -1,21 +1,26 @@
 {
   "name": "sample-04-draft",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
+  "description": "cds-numberrange-plugin sample project with draft",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/cds-test": "^0.3.0",
     "@sap/cds": "^9.0.3",
     "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
     "express": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.11.0",
-    "@cap-js/sqlite": "^2.0.1"
+    "@cap-js/sqlite": "^2.0.1",
+    "@sap/eslint-plugin-cds": "^4.0.2",
+    "eslint": "^9.29.0"
   },
   "scripts": {
     "start": "cds-serve",
+    "test": "cds test",
+    "lint": "cds lint",
     "cds:watch": "cds watch",
     "cds:deploy": "cds deploy",
     "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
@@ -36,12 +41,6 @@
           "start": 100,
           "increment": 1,
           "createOnDraft": true
-        },
-        {
-          "name": "AUTHORID",
-          "start": 100,
-          "increment": 1,
-          "createOnDraft": false
         }
       ]
     }

@@ -1,0 +1,11 @@
+### get books
+GET http://localhost:4004/odata/v4/catalog/Books
+
+### create book
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+  "title": "Test Book",
+  "stock": 1
+}

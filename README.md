@@ -80,7 +80,4 @@ This sample demonstrates the plugin with draft activated entities. You can confi
 - Make sure you don't modify manually the field values that has been configured to use the plugin. 
 
 ## TODO
-- eslint.config.mjs
-- Check with PostgreSQL
-- Generate Test Scripts
-- Create Github Pages
+- Test with PostgreSQL

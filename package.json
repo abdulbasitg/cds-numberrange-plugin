@@ -3,34 +3,30 @@
     "version": "1.0.0",
     "description": "CDS plugin for easy implementation of number range fields.",
     "main": "cds-plugin.js",
-    "scripts": {    
-
-    },
+    "scripts": {},
     "keywords": [
-      "sap",
-      "cap",
-      "hana",
-      "cds",
-      "plugin",
-      "cds-plugin",
-      "cap-plugin"
+        "sap",
+        "cap",
+        "hana",
+        "cds",
+        "plugin",
+        "cds-plugin",
+        "cap-plugin"
     ],
     "author": "Abdulbasıt Gülşen",
     "license": "MIT License",
     "peerDependencies": {
-      "@sap/cds": ">=8"
-    },
-    "devDependencies": {
+        "@sap/cds": ">=8"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/btp-apps/cds-numberrange-plugin.git"
+        "type": "git",
+        "url": "https://github.com/btp-apps/cds-numberrange-plugin.git"
     },
     "cds": {
-      "requires": {
-          "cds-numberrange-plugin": {
-            "model": "cds-numberrange-plugin"
-          }
-      }
-    }    
-  }
+        "requires": {
+            "cds-numberrange-plugin": {
+                "model": "cds-numberrange-plugin"
+            }
+        }
+    }
+}

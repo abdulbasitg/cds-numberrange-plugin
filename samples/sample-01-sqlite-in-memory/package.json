@@ -6,6 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/cds-test": "^0.3.0",
+    "@cap-js/cds-typer": "^0.35.0",
     "@sap/cds": "^9.0.3",
     "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
     "express": "^4"
@@ -18,6 +20,8 @@
   },
   "scripts": {
     "start": "cds-serve",
+    "test": "cds test",
+    "lint": "cds lint",
     "cds:watch": "cds watch",
     "cds:deploy": "cds deploy",
     "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
@@ -27,11 +31,6 @@
       "ranges": [
         {
           "name": "BOOKID",
-          "start": 1,
-          "increment": 1
-        },
-        {
-          "name": "AUTHORID",
           "start": 1,
           "increment": 1
         },
