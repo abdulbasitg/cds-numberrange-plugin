@@ -1,0 +1,67 @@
+{
+  "name": "sample-03",
+  "version": "1.0.0",
+  "description": "cds-numberrange-plugin sample project with SQLite in-memory database.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^2.1.1",
+    "@sap/cds": "^9.0.3",
+    "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.11.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "cds:watch": "cds watch",
+    "cds:deploy": "cds deploy",
+    "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
+  },
+  "cds": {
+    "requires": {
+      "[hybrid]": {
+        "db": "hana"
+      }
+    },
+    "cds-numberrange-plugin": {
+      "ranges": [
+        {
+          "name": "BOOKID",
+          "start": 1,
+          "increment": 1
+        },
+        {
+          "name": "AUTHORID",
+          "start": 1,
+          "increment": 1
+        },
+        {
+          "name": "BOOKIDPAD",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 10,
+            "padValue": "0"
+          }
+        },
+        {
+          "name": "BOOKIDCHAR",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 8,
+            "padValue": "0",
+            "prefix": "A",
+            "suffix": "Z"
+          }
+        }
+      ]
+    },
+    "sql": {
+      "native_hana_associations": false
+    }
+  }
+}

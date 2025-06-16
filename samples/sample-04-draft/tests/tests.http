@@ -1,0 +1,30 @@
+### Get Books
+GET http://localhost:4004/odata/v4/catalog/Books
+
+### Get Books Drafts
+GET http://localhost:4004/odata/v4/catalog/Books?$filter=(IsActiveEntity eq false)
+
+### Create Books Draft
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+  "title": "Sample Book Title",
+  "stock": 1
+}
+
+### Create Books Bypassing Draft
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+  "title": "Sample Book Title Without Draft",
+  "stock": 1,
+  "IsActiveEntity": true
+}
+
+### Activate Books Draft
+POST http://localhost:4004/odata/v4/catalog/Books(ID=100,IsActiveEntity=false)/draftActivate
+Content-Type: application/json
+
+{}
