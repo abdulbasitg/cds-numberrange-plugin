@@ -4,10 +4,10 @@ This is a plugin for [CAP](https://cap.cloud.sap/) framework to let you easily a
 
 # Features
 
-You can use this plugin to add autoincremented fields into your database fields. There are different options to format auto incrementation:
+You can use this plugin to add auto-incremented fields into your database. There are different options to format the auto-incrementation:
 
 - Basic Configuration allows you configure integer fields starting from specific number and increment by configured number. 
-- It is also possible to format the generated number with prefix, suffix characters and also pad the generated number with a character like 0 or any other characters. 
+- It is also possible to format the generated number with prefix, suffix characters and also pad the generated number with a 0 or any other characters. 
 
 # Usage
 
@@ -17,25 +17,27 @@ Installing plugin with **npm install**
 npm install cds-numberrange-plugin
 ```
 
-In your package.json file, add the following path into the CDS node:
+In your package.json file, add the following part into the CDS node:
 
 ```json
-    "cds-numberrange-plugin": {
-      "ranges": [
-        {
-          "name": "<RANGE NAME>",
-          "start": 1,
-          "increment": 1,
-          "createOnDraf": true,
-          "additionalProperties": {
-            "prefix": "P",
-            "suffix": "S",
-            "padCount": 10,
-            "padValue": "0"
+    "cds": {
+      "cds-numberrange-plugin": {
+        "ranges": [
+          {
+            "name": "<RANGE NAME>",
+            "start": 1,
+            "increment": 1,
+            "createOnDraft": true,
+            "additionalProperties": {
+              "prefix": "P",
+              "suffix": "S",
+              "padCount": 10,
+              "padValue": "0"
+            }
           }
-        }
-      ]
-    }   
+        ]
+      }   
+    }
 ```
 
 Then, you can annotate your fields in your database schema with special **@plugin.numberrange.rangeid** annotation. 
@@ -59,19 +61,19 @@ This annotation make this field automatically filled with range format configure
 
 ## Samples
 
-#### samples/sample-01-sqlite-in-memory
+#### [samples/sample-01-sqlite-in-memory](samples/sample-01-sqlite-in-memory/)
 
 This samples demonstrates the plugin in sqlite-in-memory database with different configuration options.
 
-#### samples/sample-02-sqlite-persistent
+#### [samples/sample-02-sqlite-persistent](samples/sample-02-sqlite-persistent/)
 
 This samples demonstrates the plugin in sqlite persistent database with different configuration options.
 
-#### samples/sample-03-hana
+#### [samples/sample-03-hana](samples/sample-03-hana/)
 
 This samples demonstrates the plugin in SAP HANA database with different configuration options.
 
-#### samples/sampl3-04-draft
+#### [samples/sample-04-draft](samples/sample-04-draft)
 
 This sample demonstrates the plugin with draft activated entities. You can configure your ranges to be created either in draft mode or after draft activation. Keep in mind that key fields must be configured in draft mode. 
 
