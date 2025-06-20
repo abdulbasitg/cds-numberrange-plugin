@@ -1,6 +1,6 @@
 {
     "name": "cds-numberrange-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "CDS plugin for easy implementation of number range fields.",
     "main": "cds-plugin.js",
     "scripts": {},
