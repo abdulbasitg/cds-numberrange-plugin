@@ -7,20 +7,14 @@
   "private": true,
   "dependencies": {
     "@cap-js/cds-test": "^0.3.0",
-    "@cap-js/hana": "^2.1.1",
-    "@sap/cds": "^9.0.3",
+    "@cap-js/hana": "^1.9.1",
+    "@sap/cds": "^8",
     "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
     "express": "^4"
-  },
-  "devDependencies": {
-    "@cap-js/cds-types": "^0.11.0",
-    "@sap/eslint-plugin-cds": "^4.0.2",
-    "eslint": "^9.29.0"
   },
   "scripts": {
     "start": "cds-serve",
     "test": "cds bind --profile hybrid --exec cds test",
-    "lint": "cds lint",
     "cds:watch": "cds watch",
     "cds:deploy": "cds deploy",
     "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
