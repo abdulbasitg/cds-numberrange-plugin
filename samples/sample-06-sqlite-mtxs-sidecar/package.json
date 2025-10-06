@@ -6,12 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@cap-js/cds-test": "^0.3.0",
     "@sap/cds": "^8",
+    "@sap/cds-mtxs": "^2",
     "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.1.tgz",
     "express": "^4"
   },
   "devDependencies": {
+    "@cap-js/cds-test": "^0.4.0",
     "@cap-js/sqlite": "^1.11.1"
   },
   "scripts": {
@@ -19,7 +20,7 @@
     "test": "cds test",
     "cds:watch": "cds watch",
     "cds:deploy": "cds deploy",
-    "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
+    "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-1.0.1.tgz && rm cds-numberrange-plugin-*.tgz"
   },
   "cds": {
     "cds-numberrange-plugin": {
@@ -48,8 +49,28 @@
             "prefix": "A",
             "suffix": "Z"
           }
+        },
+        {
+          "name": "FAL",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 8,
+            "padValue": "0",
+            "prefix": "A",
+            "suffix": "Z"
+          }
         }
       ]
+    },
+    "profile": "with-mtx-sidecar",
+    "requires": {
+      "[production]": {
+        "multitenancy": true
+      },
+      "[local-multitenancy]": {
+        "multitenancy": true
+      }
     }
   }
 }
