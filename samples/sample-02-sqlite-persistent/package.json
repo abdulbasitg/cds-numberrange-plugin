@@ -8,7 +8,7 @@
   "dependencies": {
     "@cap-js/cds-test": "^0.3.0",
     "@sap/cds": "^8",
-    "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.0.tgz",
+    "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.1.tgz",
     "express": "^4"
   },
   "devDependencies": {
