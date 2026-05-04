@@ -1,0 +1,76 @@
+### Subscribe tenant t1
+POST http://localhost:4004/-/cds/deployment/subscribe
+Content-Type: application/json
+Authorization: Basic yves:
+
+{
+  "tenant": "t1"
+}
+
+### get books
+GET http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic alice:
+
+### create book
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic alice:
+
+{
+  "title": "Test Book",
+  "stock": 1
+}
+
+### Subscribe tenant t2
+POST http://localhost:4004/-/cds/deployment/subscribe
+Content-Type: application/json
+Authorization: Basic yves:
+
+{
+  "tenant": "t2"
+}
+
+### get books
+GET http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic erin:
+
+### create book
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic erin:
+
+{
+  "title": "Test Book",
+  "stock": 1
+}
+
+### Asynch Upgrade - but not a true test in sqlite locally - ensure you test once deployed to SAP BTP
+### Stop the service, add a new number range in package.json, restart the serivice and run this command
+### Expect existing number ranges to be untouched (ie maintain current values) and new number ranges to be created with initial value
+# @name asynchJob
+POST http://localhost:4004/-/cds/saas-provisioning/upgrade
+content-type: application/json
+Authorization: Basic yves:
+Prefer: respond-async
+
+{ "tenants": ["*"] }
+
+### Unsubscribe tenant t1
+POST http://localhost:4004/-/cds/deployment/unsubscribe
+Content-Type: application/json
+Authorization: Basic yves:
+
+{
+  "tenant": "t1"
+}
+
+### Unsubscribe tenant t2
+POST http://localhost:4004/-/cds/deployment/unsubscribe
+Content-Type: application/json
+Authorization: Basic yves:
+
+{
+  "tenant": "t2"
+}

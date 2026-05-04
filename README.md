@@ -77,9 +77,18 @@ This samples demonstrates the plugin in SAP HANA database with different configu
 
 This sample demonstrates the plugin with draft activated entities. You can configure your ranges to be created either in draft mode or after draft activation. Keep in mind that key fields must be configured in draft mode. 
 
+#### [samples/sample-05-sqlite-mtxs-embedded](samples/sample-05-sqlite-mtxs-embedded)
+
+This sample demonstrates the plugin with multitenancy embedded in the main application. The number range configuration is inserted/updated on new subscriptions and as part of the tenant upgrade process.
+
+#### [samples/sample-06-sqlite-mtxs-sidecar](samples/sample-06-sqlite-mtxs-sidecar)
+
+This sample demonstrates the plugin with multitenancy in a sidecar scenario. The number range configuration is inserted/updated on new subscriptions and as part of the tenant upgrade process. The number range configuration needs to be replicated in the `package.json` of both the main application and the sidecar
+
 ## Remarks
 
-- Make sure you don't modify manually the field values that has been configured to use the plugin. 
+- Make sure you don't modify manually the field values that has been configured to use the plugin.
+- For multitenancy sidecar setups, ensure you replicate the number range configuration in the `package.json` of both the main application and the mtx\sidecar application.
 
 ## TODO
 - Test with PostgreSQL

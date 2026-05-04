@@ -1,0 +1,76 @@
+{
+  "name": "sample-01",
+  "version": "1.0.0",
+  "description": "cds-numberrange-plugin sample project with SQLite in-memory database.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^8",
+    "@sap/cds-mtxs": "^2",
+    "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.1.tgz",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^0.4.0",
+    "@cap-js/sqlite": "^1.11.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "test": "cds test",
+    "cds:watch": "cds watch",
+    "cds:deploy": "cds deploy",
+    "plugin:install": "npm pack ../../. && npm install cds-numberrange-plugin-1.0.1.tgz && rm cds-numberrange-plugin-*.tgz"
+  },
+  "cds": {
+    "cds-numberrange-plugin": {
+      "ranges": [
+        {
+          "name": "BOOKID",
+          "start": 1,
+          "increment": 1
+        },
+        {
+          "name": "BOOKIDPAD",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 10,
+            "padValue": "0"
+          }
+        },
+        {
+          "name": "BOOKIDCHAR",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 8,
+            "padValue": "0",
+            "prefix": "A",
+            "suffix": "Z"
+          }
+        },
+        {
+          "name": "FAL",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 8,
+            "padValue": "0",
+            "prefix": "A",
+            "suffix": "Z"
+          }
+        }
+      ]
+    },
+    "profile": "with-mtx-sidecar",
+    "requires": {
+      "[production]": {
+        "multitenancy": true
+      },
+      "[local-multitenancy]": {
+        "multitenancy": true
+      }
+    }
+  }
+}

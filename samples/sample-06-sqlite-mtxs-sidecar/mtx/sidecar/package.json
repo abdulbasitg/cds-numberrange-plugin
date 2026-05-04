@@ -1,0 +1,53 @@
+{
+  "name": "sample-01-mtx",
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^8",
+    "@sap/cds-mtxs": "^2",
+    "@sap/xssec": "^4",
+    "cds-numberrange-plugin": "file:cds-numberrange-plugin-1.0.1.tgz",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "plugin:install": "npm pack ../../../../. && npm install cds-numberrange-plugin-*.tgz && rm cds-numberrange-plugin-*.tgz"
+  },
+  "cds": {
+    "profile": "mtx-sidecar",
+    "cds-numberrange-plugin": {
+      "ranges": [
+        {
+          "name": "BOOKID",
+          "start": 1,
+          "increment": 1
+        },
+        {
+          "name": "BOOKIDPAD",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 10,
+            "padValue": "0"
+          }
+        },
+        {
+          "name": "BOOKIDCHAR",
+          "start": 1,
+          "increment": 1,
+          "additionalProperties": {
+            "padCount": 8,
+            "padValue": "0",
+            "prefix": "A",
+            "suffix": "Z"
+          }
+        }
+      ]
+    }
+  }
+}
